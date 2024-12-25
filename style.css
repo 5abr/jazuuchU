@@ -1,0 +1,125 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+/* Карточки */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 202px;
+    justify-content: center;
+}
+
+.card {
+    background: linear-gradient(145deg, #c43b3b, #b3a4a4); /* Нежный голубой градиент */
+    border: 3px solid #ddd;
+    border-radius: 22px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    width: calc(225% - 220px);
+    min-width: 102px; /* Минимальная ширина карточки */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 222px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовок карточки */
+.card-header {
+    display: block;
+    text-align: center;
+    background-color: #7e0a2c;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.card-header:hover {
+    background-color: #3a0306;
+}
+
+/* Скрытый checkbox */
+.toggle-checkbox {
+    display: none;
+}
+
+/* Содержимое карточки */
+.details-content {
+    background: linear-gradient(1425deg, #f8f9fa, #ffffff); /* Светлый градиент */
+    border-radius: 12px;
+    color: #333;
+    font-size: 16px; /* Оптимальный размер текста */
+    padding: 15px;
+    line-height: 1.6; /* Увеличивает межстрочный интервал */
+    transition: all 0.5s ease;
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Раскрытие содержимого */
+.toggle-checkbox:checked ~ .details-content {
+    max-height: 5030px; /* Укажите максимальную высоту в зависимости от контента */
+    padding: 15px;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+/* Форматирование текста */
+.details-content p {
+    margin: 10px 0;
+}
+
+.details-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.details-content ul li {
+    margin-bottom: -1px;
+}
+
+.details-content strong {
+    font-weight: bold;
+    color: #000;
+}
+
+.details-content em {
+    font-style: italic;
+    color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 8220px) {
+    .card {
+        width: calc(120% - 22px); /* 2 карточки в ряд для планшетов */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%; /* 1 карточка в ряд для телефонов */
+    }
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
